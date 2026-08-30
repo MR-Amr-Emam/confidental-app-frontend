@@ -3,9 +3,14 @@ import { ReactNode, useEffect, useState } from "react";
 
 
 export default function DoctorsSection(){
+    
     const lista = [1, 2];
     return (
         <div className="container">
+            <div>
+                <div><button className="btn btn-danger">hide/show</button></div>
+                
+            </div>
             <div className="row justify-content-center">
                 <div className="col-5 mx-1"><div className="fs-xlll fw-semibold">Doctors</div></div>
                 <div className="col-5 mx-1"></div>
@@ -51,3 +56,14 @@ function DoctorCard(){
 }
 
 
+function TestComp({children}:{children:ReactNode}){
+    const [state, setState] = useState(0);
+    return(
+        <div>
+            <div className="my-2"><button className="btn btn-danger" onClick={()=>{setState(state+1)}}>add</button>{state}</div>
+            <div className="my-2">
+                {children}
+            </div>
+        </div>
+    )
+}
