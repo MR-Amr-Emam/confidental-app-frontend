@@ -1,3 +1,5 @@
+"use client"
+
 import DoctorsSection from "./doctors-section";
 
 export default function DoctorsPage(){

@@ -1,0 +1,107 @@
+[
+    {
+        "id":1,
+        "name":"Ahmed Elhakim",
+        "description":"Conservative & ethitics",
+        "courses":[
+            {
+                "id":1,
+                "name":"Big boss composite posterior and anterior",
+                "advanced":0,
+                "cost":0,
+                "branches":[
+                    {
+                        "id":1,
+                        "name":"demiat",
+                        "month":9,
+                        "days":[2,3,4]
+                    },
+                    {
+                        "id":2,
+                        "name":"cairo",
+                        "month":10,
+                        "days":[28,29,30]
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name":"advanced composite venners",
+                "advanced":1,
+                "cost":0,
+                "branches":[{
+                    "id": 1,
+                    "name":"demiat",
+                    "month": 10,
+                    "days":[1, 2]
+                }]
+            }
+        ]
+    },
+    {
+        "id":2,
+        "name":"Nehal Nabil",
+        "description":"Endodontics",
+        "courses":[
+            {
+                "id":3,
+                "name": "Basic endodontics",
+                "advanced":0,
+                "cost":5500,
+                "branches":{
+                    "id":1,
+                    "name":"demiat",
+                    "month":9,
+                    "days":[17,18,19]
+                }
+            },
+            {
+                "id": 4,
+                "name":"Advanced endododtics",
+                "advanced":1,
+                "cost":6500,
+                "branches":[{
+                    "id": 3,
+                    "name":"Alexandria",
+                    "month": 10,
+                    "days":[22, 23]
+                }]
+            }
+            
+        ]
+    },
+    {
+        "id":3,
+        "name":"Mostafa Nabil",
+        "description":"Pedodontics",
+        "courses":[
+            {
+                "id":5,
+                "name":"Basic pedodontics",
+                "advanced":0,
+                "cost":4000,
+                "branches":[
+                    {
+                        "id":2,
+                        "name":"cairo",
+                        "month":10,
+                        "days":[15, 16]
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name":"Advanced  pedodontics",
+                "advanced":1,
+                "cost":0,
+                "branches":[{
+                    "id": 0,
+                    "name":"",
+                    "month": 0,
+                    "days":[]
+                }]
+            }
+        ]
+    }
+]
+
