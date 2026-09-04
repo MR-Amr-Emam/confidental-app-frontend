@@ -7,13 +7,13 @@ import { useCoursesPageContext } from "./logic-functions/page-context";
 export default function DoctorsSection(){
     const {data}= useQuery({
         queryKey: ["doctors_query"],
-        queryFn: ()=>fetch("http://localhost:3000/doctors.json").then((res)=>res.json()),
+        queryFn: ()=>fetch("/doctors.json").then((res)=>res.json()),
         select:doctorSelect,
     })
     
     const {data:doctorImages} = useQuery({
         queryKey: ["doctors_images"],
-        queryFn: ()=>fetch("http://localhost:3000/doctors-images.json").then((res)=>res.json()),
+        queryFn: ()=>fetch("/doctors-images.json").then((res)=>res.json()),
     })
 
     const doctors = data ?? [];

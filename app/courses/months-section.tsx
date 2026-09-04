@@ -5,7 +5,7 @@ import { useCoursesPageContext } from "./logic-functions/page-context";
 export default function MonthsSection() {
     const { data } = useQuery({
         queryKey: ["doctors_query"],
-        queryFn: () => fetch("http://localhost:3000/doctors.json").then((res) => res.json()),
+        queryFn: () => fetch("/doctors.json").then((res) => res.json()),
         select: monthSelect,
     });
 
