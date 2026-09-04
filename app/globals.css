@@ -3108,6 +3108,10 @@ progress {
   box-shadow: none !important;
 }
 
+.shadow-highlight {
+  box-shadow: 0 0.125rem 0.25rem rgb(109.8, 168, 253.8) !important;
+}
+
 .focus-ring-primary {
   --bs-focus-ring-color: rgba(var(--bs-primary-rgb), var(--bs-focus-ring-opacity));
 }
@@ -3324,6 +3328,11 @@ progress {
 .border-white {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-white-rgb), var(--bs-border-opacity)) !important;
+}
+
+.border-highlight {
+  --bs-border-opacity: 1;
+  border-color: rgb(109.8, 168, 253.8) !important;
 }
 
 .border-primary-subtle {
@@ -4934,6 +4943,10 @@ progress {
 
 .z-3 {
   z-index: 3 !important;
+}
+
+.pointer {
+  cursor: pointer !important;
 }
 
 @media (min-width: 576px) {

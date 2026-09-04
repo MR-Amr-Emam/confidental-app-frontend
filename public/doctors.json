@@ -48,12 +48,12 @@
                 "name": "Basic endodontics",
                 "advanced":0,
                 "cost":5500,
-                "branches":{
+                "branches":[{
                     "id":1,
                     "name":"demiat",
                     "month":9,
                     "days":[17,18,19]
-                }
+                }]
             },
             {
                 "id": 4,
@@ -101,6 +101,162 @@
                     "days":[]
                 }]
             }
+        ]
+    },
+    {
+        "id":4,
+        "name":"Omar Tarek",
+        "description":"Fixed prothdontics",
+        "courses":[
+            {
+                "id":7,
+                "name":"Master the Principles of Modern Fixed Prosthodontics — From Treatment Planning to Final Cementation",
+                "advanced":0,
+                "cost":4500,
+                "branches":[
+                    {
+                        "id":3,
+                        "name":"Alexandria",
+                        "month":9,
+                        "days":[24, 25, 26]
+                    }
+                ]
+            }
+            
+        ]
+    },
+    {
+        "id":5,
+        "name":"Ahmed Ellithy",
+        "description":"Fixed Prosthodontics",
+        "courses":[
+            {
+                "id":8,
+                "name":"Comprehensive Crown , Bridge & Veneer course",
+                "advanced":0,
+                "cost":8000,
+                "branches":[
+                    {
+                        "id":2,
+                        "name":"cairo",
+                        "month":12,
+                        "days":[3, 4, 5, 10, 11, 12]
+                    }
+                ]
+            }
+            
+        ]
+    },
+    {
+        "id":6,
+        "name":"Soulafa Belal",
+        "description":"Fixed Prosthodontics",
+        "courses":[
+            {
+                "id":8,
+                "name":"From Diagnosis to Advanced Periodontal & Esthetic Surgical Procedures",
+                "advanced":1,
+                "cost":12000,
+                "branches":[
+                    {
+                        "id":3,
+                        "name":"Alexandria",
+                        "month":10,
+                        "days":[21, 22, 23, 28, 29, 30]
+                    }
+                ]
+            }
+            
+        ]
+    },
+    {
+        "id":7,
+        "name":"Waleed Kurdi",
+        "description":"Fixed Prosthodontics",
+        "courses":[
+            {
+                "id":9,
+                "name":"Advanced Endodontics",
+                "advanced":1,
+                "cost":6500,
+                "branches":[
+                    {
+                        "id":2,
+                        "name":"cairo",
+                        "month":11,
+                        "days":[12, 13]
+                    }
+                ]
+            }
+            
+        ]
+    },
+    {
+        "id":8,
+        "name":"Mustafa Noor & Mohamed Noaman & Mahmoud Shalash & Soulafa Belal",
+        "description":"Fixed Prosthodontics",
+        "courses":[
+            {
+                "id":10,
+                "name":"Confidental Clinical Implant Program",
+                "advanced":0,
+                "cost":18000,
+                "branches":[
+                    {
+                        "id":2,
+                        "name":"cairo",
+                        "month":9,
+                        "days":[24, 25]
+                    },
+                    {
+                        "id":2,
+                        "name":"cairo",
+                        "month":9,
+                        "days":[30, 31]
+                    },
+                    {
+                        "id":2,
+                        "name":"cairo",
+                        "month":10,
+                        "days":[2]
+                    },
+                    {
+                        "id":2,
+                        "name":"cairo",
+                        "month":10,
+                        "days":[5, 7]
+                    },
+                    {
+                        "id":2,
+                        "name":"cairo",
+                        "month":10,
+                        "days":[17, 18]
+                    }
+                ]
+            }
+            
+        ]
+    },
+    {
+        "id":9,
+        "name":"Waleed Elrefaey",
+        "description":"Fixed Prosthodontics",
+        "courses":[
+            {
+                "id":11,
+                "name":"Clinical Minor Surgery Program",
+                "advanced":0,
+                "cost":2500,
+                "branches":[
+                    {
+                        "id":1,
+                        "name":"demiat",
+                        "month":9,
+                        "days":[10, 11, 12]
+                    }
+                ]
+            }
+            
         ]
     }
 ]

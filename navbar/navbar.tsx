@@ -4,10 +4,7 @@ import Link from "next/link";
 
 const navigationItems = [
 	{ label: "Home", href: "/" },
-	{ label: "Doctors", href: "/doctors" },
-	{ label: "Months", href: "#months" },
 	{ label: "Courses", href: "/courses" },
-	{ label: "Branches", href: "#branches" },
 ];
 
 export default function Navbar() {
