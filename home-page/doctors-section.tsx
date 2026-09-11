@@ -3,7 +3,7 @@ export default function DoctorsSection(){
     return (
         <div className="container-fluid d-flex flex-column align-items-center my-5">
             <div className="fs-xlll fw-bold text-dark mb-5">our Doctors</div>
-            <div className="w-100 d-flex">
+            <div className="w-100 d-flex flex-column flex-md-row">
                 {lista.map((item:number, index:number)=>
                     <DoctorCard 
                     key={index}
@@ -25,7 +25,7 @@ export default function DoctorsSection(){
 function DoctorCard({img, title, text, reverse}:{img:string, title:string, text:string, reverse:number}){
     return(
         <div className={`flex-fill h-100`}>
-          <div className={`d-flex flex-column${reverse?"-reverse":""}`}>
+          <div className={`d-flex flex-column flex-md-column${reverse?"-reverse":""}`}>
             <div className={`d-flex align-items-center justify-content-center`}>
               <img src={img} className="img-fluid rounded-start w-75"
               alt="..." />
