@@ -8,7 +8,7 @@ export default function StatsticsSection(){
     ]
     return(
         <div className="container my-5">
-            <div className="d-flex justify-content-around flex-wrap" >
+            <div className="d-flex justify-content-around" >
                 {statstics.map((statstic:{key:string, value:number}, index:number)=>
                     <Statsctic
                     key={index}

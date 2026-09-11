@@ -26,9 +26,9 @@ export default function MonthsSection() {
             </div>
 
             {rows.map((row, rowIndex) => (
-                <div className="row justify-content-center mb-md-5" key={rowIndex}>
+                <div className="row justify-content-center mb-5" key={rowIndex}>
                     {row.map((month, index) => (
-                        <div className="col-md-5 mx-1" key={index}>
+                        <div className="col-5 mx-1" key={index}>
                             <MonthCard monthData={month} />
                         </div>
                     ))}
@@ -42,14 +42,14 @@ export default function MonthsSection() {
 function MonthCard({ monthData }: { monthData: MonthData }) {
     const {setDataPointer, setCourseScroll} = useCoursesPageContext();
     return (
-        <div className="card border shadow rounded p-2 mb-5 mb-md">
+        <div className="card border shadow rounded p-2">
             <div className="card-header text-primary fw-bold fs-2">
                 {getMonthName(monthData.month)}
             </div>
             <div className="card-body">
                 <div className="fw-semibold fs-5">Courses</div>
                 {monthData.courses?.map((course, index) =>
-                    <div key={course.id ?? index}  className="fw-semibold mx-2 pointer text-highlight-hover mb-2"
+                    <div key={course.id ?? index}  className="fw-semibold mx-2 pointer"
                     onClick={()=>{
                         setDataPointer(1);
                         setCourseScroll(course.id);
@@ -64,6 +64,7 @@ function MonthCard({ monthData }: { monthData: MonthData }) {
                     </div>
                 )}
                 {/*<div className="card-text fw-semibold">{courseData.description}</div>*/}
+                <a href="#" className="btn btn-dark">Go somewhere</a>
             </div>
         </div>
     );

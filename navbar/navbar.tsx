@@ -9,13 +9,13 @@ const navigationItems = [
 
 export default function Navbar() {
 	return (
-		<header className="p-3 overflow-hidden border">
+		<header className="p-3">
 			<div className={"d-flex align-items-center"}>
 				<a className="mx-2 fs-2 fw-bold">
 					confidental
 				</a>
 
-				<nav className="mx-2 fs-4 d-flex w-100 align-items-center">
+				<nav className="mx-2 fs-4 d-flex w-100">
 					{navigationItems.map((item) => (
 						<Link
 							href={item.href}
@@ -25,9 +25,9 @@ export default function Navbar() {
 							{item.label}
 						</Link>
 					))}
-					<button type="button" className="btn btn-outline-dark d-none d-md-inline
+					<button type="button" className="btn btn-outline-dark
 					ms-auto fw-semibold mx-2">sign in</button>
-					<button type="button" className="btn btn-outline-dark d-none d-md-inline
+					<button type="button" className="btn btn-outline-dark
 					fw-semibold mx-2">sign up</button>
 				</nav>
 			</div>

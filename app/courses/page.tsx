@@ -7,7 +7,6 @@ import BranchesSection from "./branches-section";
 import {CoursesPageContext} from "./logic-functions/page-context";
 import { useState } from "react";
 import HeaderSection from "./header-section";
-import PopUp from "./pop-up";
 
 
 
@@ -17,21 +16,18 @@ export default function CoursesPage() {
   // context
   const [dataPointer, setDataPointer] = useState<1|2|3|4>(1);
   const [courseScroll, setCourseScroll] = useState<number>(0);
-  const [coursePopUp, setCoursePopUp] = useState<number>(0);
 
   return (
     <QueryClientProvider client={queryClient}>
       <CoursesPageContext.Provider value={{
         dataPointer, setDataPointer,
-        courseScroll, setCourseScroll,
-        coursePopUp, setCoursePopUp}}>
+        courseScroll, setCourseScroll,}}>
 
         <HeaderSection />
         {(dataPointer==1)?<CoursesSection />:""}
         {(dataPointer==2)?<DoctorsSection />:""}
         {(dataPointer==3)?<MonthsSection />:""}
         {(dataPointer==4)?<BranchesSection />:""}
-        {coursePopUp?<PopUp />:""}
       </CoursesPageContext.Provider>
     </QueryClientProvider>
   );

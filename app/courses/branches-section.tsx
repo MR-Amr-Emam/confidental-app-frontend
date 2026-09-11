@@ -26,9 +26,9 @@ export default function CoursesSection() {
             </div>
 
             {rows.map((row, rowIndex) => (
-                <div className="row justify-content-center mb-md-5" key={rowIndex}>
+                <div className="row justify-content-center mb-5" key={rowIndex}>
                     {row.map((course, index) => (
-                        <div className="col-md-5 mx-1" key={course.id ?? `${rowIndex}-${index}`}>
+                        <div className="col-5 mx-1" key={course.id ?? `${rowIndex}-${index}`}>
                             <BranchCard branchData={course} />
                         </div>
                     ))}
@@ -43,19 +43,20 @@ export default function CoursesSection() {
 function BranchCard({ branchData }: { branchData: BranchData }) {
     const {setDataPointer, setCourseScroll} = useCoursesPageContext();
     return (
-        <div className="card border shadow rounded p-2 mx-3 mx-md mb-5 mb-md">
+        <div className="card border shadow rounded p-2">
             <div className="card-header text-primary fw-bold fs-2">
                 {branchData.name}
             </div>
             <div className="card-body">
                 <div className="fw-semibold fs-5">Courses</div>
                 {branchData.courses?.map((course, index) =>
-                    <div key={index}  className="fw-semibold mx-2 pointer text-highlight-hover mb-2"
+                    <div key={course.id ?? index}  className="fw-semibold mx-2 pointer"
                     onClick={()=>{setDataPointer(1); setCourseScroll(course.id)}}>
                         {index + 1}. {course.name} 
                     </div>
                 )}
                 {/*<div className="card-text fw-semibold">{courseData.description}</div>*/}
+                <a href="#" className="btn btn-dark">Go somewhere</a>
             </div>
         </div>
     );

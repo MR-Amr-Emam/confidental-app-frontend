@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { ReactNode, useEffect, useState } from "react";
 import { DoctorImages, doctorSelect } from "./logic-functions/fetchDoctors";
 import { useCoursesPageContext } from "./logic-functions/page-context";
-import { Doctor } from "./logic-functions/fetch-months";
 
 
 export default function DoctorsSection(){
@@ -18,12 +17,11 @@ export default function DoctorsSection(){
     })
 
     const doctors = data ?? [];
-    const doctorPairs = doctors.reduce((acc: any[], doctor, index) => {
-        if (index % 2 === 0) {
-            acc.push([doctor, doctors[index + 1]]);
-        }
-        return acc;
-    }, []);
+    const rows = [];
+
+    for (let i = 0; i < doctors.length; i += 2) {
+        rows.push(doctors.slice(i, i + 2));
+    }
 
     return (
         <div className="container">
@@ -32,20 +30,20 @@ export default function DoctorsSection(){
                 <div className="col-5 mx-1"></div>
             </div>
 
-            {doctorPairs.map((pair, index) => (
-                <div className="row justify-content-center" key={`${pair[0].id}-${pair[1]?.id || ''}`}>
-                    {pair.map((doctor:Doctor) => (
-                        doctor && (
-                            <div className="col-md-5 mx-md-1" key={doctor.id}>
-                                <DoctorCard
-                                    name={doctor.name}
-                                    description={doctor.description}
-                                    courses={doctor.courses}
-                                    image = {doctorImages?doctorImages[doctor.id-1].image:""}
-                                />
-                            </div>
-                        )
+            {rows.map((rowDoctors, rowIndex) => (
+                <div key={`row-${rowIndex}`} className="row justify-content-center">
+                    {rowDoctors.map((doctor, colIndex) => (
+                        <div key={doctor.id ?? `${rowIndex}-${colIndex}`} className="col-5 mx-1">
+                            <DoctorCard
+                                name={doctor.name}
+                                description={doctor.description}
+                                courses={doctor.courses}
+                                image = {doctorImages?doctorImages[doctor.id-1].image:""}
+                            />
+                        </div>
                     ))}
+
+                    {rowDoctors.length === 1 && <div className="col-5 mx-1"></div>}
                 </div>
             ))}
         </div>
@@ -61,17 +59,15 @@ function DoctorCard(
     const {setDataPointer, setCourseScroll} = useCoursesPageContext();
 
     return(
-        <div className="card border rounded shadow mb-5 mx-3 mx-md">
-            {image?
-            <div className="ratio ratio-16x9"><img src={image} className="card-img-top w-100 object-fit-cover"/></div>
-            :""}
+        <div className="card border rounded shadow mb-5">
+            <img src={image} className="card-img-top w-100" alt="..." />
             <div className="card-body p-1">
               <div className="card-title text-primary fw-bold fs-3">{name}</div>
               <div className="card-text fw-semibold mx-2">{description}</div>
               <div className="card-title text-primary fw-bold fs-5">courses</div>
               <div className="card-text fw-semibold mx-2">
                 {courses.map((course, index) => (
-                    <div key={course.id ?? index} className="pointer text-highlight-hover mb-2" onClick={()=>{
+                    <div key={course.id ?? index} className="pointer" onClick={()=>{
                         setDataPointer(1);
                         setCourseScroll(course.id);
                     }}>{index + 1}. {course.name}</div>
