@@ -40,9 +40,9 @@ export default function CoursesSection() {
             </div>
 
             {rows.map((row, rowIndex) => (
-                <div className="row justify-content-center mb-5" key={rowIndex}>
+                <div className="row justify-content-center mb-md-5" key={rowIndex}>
                     {row.map((course, index) => (
-                        <div className="col-5 mx-1" key={course.id ?? `${rowIndex}-${index}`}
+                        <div className="col-md-5 mx-1 mb-5 mb-md" key={course.id ?? `${rowIndex}-${index}`}
                         ref={(ele)=>{coursesRef.current[course.id]=ele}}>
                             <CourseCard courseData={course} />
                         </div>
@@ -55,18 +55,12 @@ export default function CoursesSection() {
 }
 
 function CourseCard({ courseData }: { courseData: CourseData }) {
-    const {courseScroll} = useCoursesPageContext();
-    const payParams = new URLSearchParams({
-        doctorName: courseData.doctors.map((doctor) => doctor.name).join(", "),
-        courseName: courseData.name,
-        courseId: String(courseData.id),
-        branch: courseData.branches?.map((branch) => branch.name).join(", ") ?? "",
-        price: String(courseData.cost),
-    });
+    const {courseScroll, setCoursePopUp} = useCoursesPageContext();
 
     return (
-        <div className={`card rounded p-2 border
-        ${courseScroll==courseData.id?"border-highlight shadow-highlight":"shadow"}`}>
+        <div className={`card rounded p-2 border shadow-highlight-hover border-highlight-hover pointer mx-3 mx-md
+        ${courseScroll==courseData.id?"border-highlight shadow-highlight":"shadow"}`}
+        onClick={()=>{setCoursePopUp(courseData.id);document.body.style.overflow = "hidden";}}>
             <div className="card-header text-primary fw-bold fs-2">
                 {courseData.name}
             </div>
@@ -93,8 +87,6 @@ function CourseCard({ courseData }: { courseData: CourseData }) {
                         </div>
                     )}
                 </div>
-                {/*<div className="card-text fw-semibold">{courseData.description}</div>*/}
-                <Link href={`/pay?${payParams.toString()}`} className="btn btn-dark">apply</Link>
             </div>
         </div>
     );

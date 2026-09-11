@@ -7,6 +7,9 @@ export const CoursesPageContext = createContext<
 
     courseScroll: number,
     setCourseScroll: Dispatch<SetStateAction<number>>,
+
+    coursePopUp: number,
+    setCoursePopUp: Dispatch<SetStateAction<number>>,
   } | null
 >(null);
 

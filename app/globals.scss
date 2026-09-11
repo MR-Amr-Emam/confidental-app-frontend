@@ -76,6 +76,7 @@ $custom-utilities: (
           map-get(map-get($utilities, "shadow"), "values"),
           ("highlight": $box-shadow-highlight)
         ),
+        state: hover,
       ),
     ),
     "border-color": map-merge(
@@ -85,14 +86,23 @@ $custom-utilities: (
           map-get(map-get($utilities, "border-color"), "values"),
           ("highlight": $highlight)
         ),
+        state: hover,
       ),
     ),
     "pointer": (
       property: cursor,
       class: "pointer",
       values: (null:pointer),
+    ),
+    "text-highlight": (
+      property: color,
+      class: "text-highlight",
+      state:hover,
+      values: (null:$highlight),
     )
 );
+
+
 $utilities: map-merge($utilities, $custom-utilities);
 
 
@@ -103,3 +113,4 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
